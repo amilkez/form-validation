@@ -11,19 +11,30 @@
   <body>
     <form novalidate>
       <label for="email">Email:</label>
-      <input type="email" name="email" id="email" />
+      <input type="email" name="email" id="email" required />
+      <span class="email-error" aria-live="polite"></span>
       <label for="country">Country:</label>
-      <input type="text" name="country" id="country" />
+      <input type="text" name="country" id="country" required />
       <label for="zip-code">Zip Code:</label>
-      <input type="number" name="zip-code" id="zip-code" />
+      <input type="number" name="zip-code" id="zip-code" required />
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        required
+        minlength="8"
+        maxlength="15"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
+      />
       <label for="password-confirmation">Confirm your password:</label>
       <input
         type="password"
         name="password-confirmation"
         id="password-confirmation"
+        required
       />
+      <span class="password-error"></span>
       <button type="submit">Register</button>
     </form>
   </body>
